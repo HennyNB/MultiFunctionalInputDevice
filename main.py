@@ -1,0 +1,47 @@
+import sys
+
+sys.path.append('.\\')
+
+
+class MainProgramme(object):
+
+    @staticmethod
+    def operator():
+        import control
+
+        control = control.Control()
+        control.control()
+
+    @staticmethod
+    def total_creator():
+        import creator
+
+        creator = creator.Creator()
+        creator.total_creator()
+
+    @staticmethod
+    def information_writer():
+        import important_information_writer
+
+        important_information_writer = important_information_writer.ImportantInformationWriter()
+        important_information_writer.writer()
+
+    @staticmethod
+    def main():
+        import manager
+
+        manager = manager.Manager()
+        manager.manager()
+
+
+def main():
+    main_programme = MainProgramme()
+
+    main_programme.total_creator()
+    main_programme.operator()
+    main_programme.information_writer()
+    main_programme.main()
+
+
+if __name__ == '__main__':
+    main()
