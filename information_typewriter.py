@@ -1,7 +1,6 @@
 import os
 import sys
 import time
-import ctypes
 import pynput
 import pyautogui
 import pyperclip
