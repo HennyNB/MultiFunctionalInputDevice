@@ -7,9 +7,9 @@ class MainProgramme(object):
 
     @staticmethod
     def operator():
-        import installer
+        import modules_installer
 
-        installer = installer.Installer()
+        installer = modules_installer.ModulesInstaller()
         installer.installer()
 
     @staticmethod

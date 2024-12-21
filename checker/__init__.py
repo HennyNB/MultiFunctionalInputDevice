@@ -1,19 +1,19 @@
 import sys
 
 sys.path.append('.\\')
-import installer
+import modules_installer
 import get_modules
 
 
 class Checker(object):
-    installer = installer.Installer()
+    installer = modules_installer.Installer()
     get_modules = get_modules.GetModules()
 
     modules_list = get_modules.get_modules()
 
     def writer(self):
         open_file = '.\\importer.py'
-        modules = ('import' + ' ') + ('\nimport' + ' ').join(self.modules_list)
+        modules = ('import' + ' ') + ('\n' + 'import' + ' ').join(self.modules_list) + '\n'
 
         with open(file=open_file, mode='r', encoding='UTF-8') as file:
             content = file.read()

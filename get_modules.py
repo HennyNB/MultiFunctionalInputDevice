@@ -9,6 +9,7 @@ class GetModules(object):
         file_list = []
 
         modules_list = []
+        module_lists = []
         imports_list = []
 
         key = 'i' + 'm' + 'p' + 'o' + 'r' + 't' + ' '
@@ -33,10 +34,11 @@ class GetModules(object):
             if module not in file_list:
                 if '.' in module:
                     classes = module.split('.')[0]
-                    modules_list.append(classes)
+                    module_lists.append(classes)
 
                 else:
-                    modules_list.append(module)
+                    module_lists.append(module)
 
+        [modules_list.append(module) for module in set(module_lists)]
         modules_list.sort()
         return modules_list

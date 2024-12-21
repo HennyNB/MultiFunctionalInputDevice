@@ -3,6 +3,7 @@ import sys
 import time
 import pynput
 import string
+import pyautogui
 import pyperclip
 
 sys.path.append('.\\')
@@ -16,8 +17,8 @@ class InformationTypewriter(object):
 
     keyboard = pynput.keyboard.Controller()
 
-    string_list = (string.punctuation + '·1234567890-=【】；’、，。、~！@#￥%……&*（）——+{}：“|《》？' +
-                   'AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz' + ' \n')
+    string = (string.punctuation + '0123456789' + ' \n' +
+              'AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz')
 
     def information_typewriter(self):
         os.system('cls')
@@ -41,13 +42,12 @@ class InformationTypewriter(object):
             item = content[it]
 
             for char in item:
-                if (char in self.string_list) or ('\u4e00' <= char <= '\u9fff'):
+                if char in self.string or char.encode('UTF-8'):
                     self.keyboard.type(char)
                     time.sleep(interval)
 
                 else:
                     pyperclip.copy(char)
-                    self.keyboard.press(key='Ctrl')
-                    self.keyboard.pressed()
+                    pyautogui.hotkey('Ctrl', 'V')
 
         self.config.end()
