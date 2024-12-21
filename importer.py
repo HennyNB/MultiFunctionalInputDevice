@@ -9,7 +9,6 @@ import pynput
 import pyperclip
 import requests
 import shutil
-import string
 import sys
 import time
 import zipfile
