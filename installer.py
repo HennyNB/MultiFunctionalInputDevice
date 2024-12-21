@@ -4,16 +4,18 @@ import importlib.util
 
 sys.path.append('.\\')
 import config
+import checker
 import get_modules
 
 
 class Installer(object):
     config = config.Config()
+    checker = checker.Checker()
     get_modules = get_modules.GetModules()
 
     install_command = 'pip install -i https://pypi.tuna.tsinghua.edu.cn/simple '
 
-    modules_list = get_modules.get_modules(path='.\\')
+    modules_list = get_modules.get_modules()
 
     def installer_config(self, module: str):
         print('')
@@ -33,3 +35,5 @@ class Installer(object):
          if importlib.util.find_spec(module) is None]
 
         os.system('cls')
+
+        self.checker.checker()

@@ -37,15 +37,15 @@ class ProgressBar(object):
         uncompleted_length = self.bar_length - completed_length
 
         percents = self.rounder(100 * item / total, self.decimal_places)
-        [percents_list.append(quantities) for quantities in str(percents)]
+        [percents_list.append(quantity) for quantity in str(percents)]
 
         bar = self.filled_text * completed_length + self.unfilled_text * uncompleted_length
 
         def output_config(filled: str, percent_bar: str):
-            out_put = ('\r' + self.progress_title + '[' + filled + '] ' +
+            out_put = (self.progress_title + '[' + filled + '] ' +
                        percent_bar + ' %' + ' ' * self.bar_end_space_quantity)
 
-            print(out_put, end='')
+            print(out_put, end='\r')
 
         def output(percent_bar: str, flag: str):
             if flag == 'programme':

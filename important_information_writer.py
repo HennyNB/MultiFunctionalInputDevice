@@ -22,7 +22,7 @@ class ImportantInformationWriter(object):
     editor_total = str(project_name + creation_editor + creation_time +
                        contact_information + technical_support)
 
-    modules_total = config.next.join(get_modules.get_modules(path='.\\')) + config.next
+    modules_total = config.next.join(get_modules.get_modules()) + config.next
 
     used_programme_total = used_programme + config.now() + config.next + config.next
 

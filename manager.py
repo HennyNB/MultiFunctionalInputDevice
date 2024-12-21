@@ -39,9 +39,7 @@ class Manager(object):
 
         while True:
             self.title()
-
-            print('请选择：', end='')
-            flag = input('')
+            flag = input('请选择：')
 
             if flag == '0':
                 self.flag_writer(flag=flag, judgment=self.true)

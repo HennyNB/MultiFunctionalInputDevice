@@ -38,7 +38,7 @@ class Config(object):
 
         return content
 
-    def times_calculator(self, number: str):
+    def calculator(self, number: str):
         num = [j for i in number for j in i if j in self.number_list]
 
         if num[0] == '0' and len(num) > 1:
@@ -93,7 +93,7 @@ class Config(object):
         print(self.text_middle(text='已退出'))
 
     def be_getting(self):
-        print(self.text_middle(text='获取中'))
+        print(self.text_middle(text='正在获取'))
 
     def have_gotten(self):
         print(self.text_middle(text='下载成功'))
@@ -119,7 +119,7 @@ class Config(object):
         print('')
 
         for item in range(3):
-            print(self.text_middle(text='距离输入还有 0' + str(3 - item) + ' 秒') + '\r', end='')
+            print(self.text_middle(text='距离输入还有 0' + str(3 - item) + ' 秒'), end='\r')
             time.sleep(1)
 
         os.system('cls')

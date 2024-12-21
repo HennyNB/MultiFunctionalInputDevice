@@ -26,7 +26,7 @@ class SameInformationWriter(object):
         with open(file=self.config.times_path, mode='r', encoding='UTF-8') as file:
             quantity = file.read()
 
-        total_times = int(self.config.times_calculator(number=quantity))
+        total_times = int(self.config.calculator(number=quantity))
 
         pyperclip.copy(txt)
         pyautogui.keyDown('Ctrl')

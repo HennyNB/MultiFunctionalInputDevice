@@ -5,7 +5,7 @@ import pathlib
 class GetModules(object):
 
     @staticmethod
-    def get_modules(path: str):
+    def get_modules(path: str = '.\\'):
         file_list = []
 
         modules_list = []
