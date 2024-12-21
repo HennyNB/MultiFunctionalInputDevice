@@ -2,7 +2,6 @@ import os
 import sys
 import time
 import pynput
-import string
 import pyautogui
 import pyperclip
 
@@ -16,9 +15,6 @@ class InformationTypewriter(object):
     progress_bar = progress_bar.ProgressBar()
 
     keyboard = pynput.keyboard.Controller()
-
-    string = (string.punctuation + '0123456789' + ' \n' +
-              'AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz')
 
     def information_typewriter(self):
         os.system('cls')
@@ -42,7 +38,7 @@ class InformationTypewriter(object):
             item = content[it]
 
             for char in item:
-                if char in self.string or char.encode('UTF-8'):
+                if char.encode('UTF-8'):
                     self.keyboard.type(char)
                     time.sleep(interval)
 
