@@ -5,6 +5,7 @@ import importlib
 import os
 import pathlib
 import pyautogui
+import pygetwindow
 import pynput
 import pyperclip
 import requests

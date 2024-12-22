@@ -6,7 +6,7 @@ sys.path.append('.\\')
 class MainProgramme(object):
 
     @staticmethod
-    def operator():
+    def installer():
         import modules_installer
 
         installer = modules_installer.ModulesInstaller()
@@ -46,7 +46,7 @@ def main():
 
     main_programme.window_settings()
     main_programme.total_creator()
-    main_programme.operator()
+    main_programme.installer()
     main_programme.information_writer()
     main_programme.main()
 

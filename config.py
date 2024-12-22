@@ -66,10 +66,10 @@ class Config(object):
 
     def editor_title(self):
         print(self.split())
-        print(self.text_middle(text='多功能输入装置'))
-        print(self.text_middle(text='制作：Henny-發龘'))
+        print(self.text_middle(text=self.window_title))
+        print(self.text_middle(text='作者：Henny-發龘'))
         print(self.text_middle(text='QQ：2669753313'))
-        print(self.text_middle(text='技术支持：PyCharm'))
+        print(self.text_middle(text='外挂科技有限公司'))
         print(self.split())
 
     def function_title(self, flag: str):
@@ -106,7 +106,7 @@ class Config(object):
         print(self.text_middle(text='【错误】输入有误，再次输入'))
 
     @staticmethod
-    def try_installing_modules(module):
+    def try_installing_modules(module: str):
         print('尝试安装模块：' + module)
 
     def tips(self):
