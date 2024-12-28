@@ -3,6 +3,7 @@ import sys
 sys.path.append('.\\')
 import config
 import get_source
+import data_inputer
 import each_line_writer
 import information_typewriter
 import same_information_writer
@@ -11,6 +12,7 @@ import same_information_writer
 class Manager(object):
     config = config.Config()
     get_source = get_source.GetSource()
+    data_inputer = data_inputer.DataInputer()
     each_line_writer = each_line_writer.EachLineWriter()
     information_typewriter = information_typewriter.InformationTypewriter()
     same_information_writer = same_information_writer.SameInformationWriter()
@@ -60,6 +62,10 @@ class Manager(object):
                 self.same_information_writer.same_information_writer()
 
             elif flag == '4':
+                self.flag_writer(flag=flag, judgment=self.true)
+                self.data_inputer.data_inputer()
+
+            elif flag == '5':
                 self.flag_writer(flag=flag, judgment=self.true)
                 self.get_source.source_operator()
 

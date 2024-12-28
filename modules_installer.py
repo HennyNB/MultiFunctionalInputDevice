@@ -32,7 +32,7 @@ class ModulesInstaller(object):
     @staticmethod
     def find_file(filename: str):
         path_list = os.listdir('.\\')
-        return [it for it in path_list if filename in it][0]
+        return [file for file in path_list if filename in file][0]
 
     def installer(self):
         modules_list = []

@@ -45,7 +45,7 @@ class ProgressBar(object):
             out_put = (self.progress_title + '[' + filled + '] ' +
                        percent_bar + ' %' + ' ' * self.bar_end_space_quantity)
 
-            print(out_put, end='\r')
+            print('\r' + out_put, end='')
 
         def output(percent_bar: str, flag: str):
             if flag == 'programme':

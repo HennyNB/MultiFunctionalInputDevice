@@ -12,16 +12,16 @@ class ConsoleSettings(object):
     config = config.Config()
 
     @staticmethod
-    def find_window(title: str, classes: str = 'ConsoleWindowClass'):
-        window = win32gui.FindWindow(classes, title)
+    def find_window(window_title: str, window_class_name: str = 'ConsoleWindowClass'):
+        window = win32gui.FindWindow(window_class_name, window_title)
         return window
 
     def get_old_handle(self):
-        handle = self.find_window(title='管理员: ' + ' ' + self.config.old_title)
+        handle = self.find_window(window_title='管理员: ' + ' ' + self.config.old_title)
         return handle
 
     def get_new_handle(self):
-        handle = self.find_window(title=self.config.new_title)
+        handle = self.find_window(window_title=self.config.new_title)
         return handle
 
     @staticmethod

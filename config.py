@@ -6,10 +6,10 @@ import datetime
 class Config(object):
     root_path = '.\\'
 
-    doc_path = root_path + '_doc_' + '\\'
-    log_path = root_path + '_log_' + '\\'
-    data_path = root_path + '_input_' + '\\'
-    source_path = root_path + '_source_' + '\\'
+    doc_path = root_path + '_docs_' + '\\'
+    log_path = root_path + '_logs_' + '\\'
+    data_path = root_path + '_inputs_' + '\\'
+    source_path = root_path + '_sources_' + '\\'
 
     zip_file_path = root_path + 'file.zip'
     information_path = doc_path + 'information.txt'
@@ -33,7 +33,7 @@ class Config(object):
 
     split_text = '='
 
-    old_title = 'Python'
+    old_title = 'Administrator'
     new_title = '多功能输入装置'
 
     number_list = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
@@ -53,8 +53,8 @@ class Config(object):
         if num[0] == '0' and '.' in num and len(num) > 1:
             num.remove(num[0])
 
-        after = ''.join(num)
-        return after
+        splot = ''.join(num)
+        return splot
 
     @staticmethod
     def text_length(text: str):
@@ -67,10 +67,14 @@ class Config(object):
     def text_middle(self, text: str):
         string_length = self.text_length(text=text)
         double = self.split_quantity - string_length
+
         space_quantity_float = double / 2
         space_quantity = int(space_quantity_float)
 
-        string = ' ' * space_quantity + text
+        front_space = ' ' * space_quantity
+        end_space = ' ' * (self.split_quantity - space_quantity - self.text_length(text=text))
+
+        string = front_space + text + end_space
         return string
 
     def editor_title(self):
@@ -78,7 +82,6 @@ class Config(object):
         print(self.text_middle(text=self.new_title))
         print(self.text_middle(text='作者：Henny-發龘'))
         print(self.text_middle(text='QQ：2669753313'))
-        print(self.text_middle(text='龍腾龖龖科技有限公司'))
         print(self.split())
 
     def function_title(self, flag: str):
@@ -92,7 +95,8 @@ class Config(object):
         print(self.text_middle(text='[1]： 信息自动输入'))
         print(self.text_middle(text='[2]： 逐行读取输入'))
         print(self.text_middle(text='[3]： 重复信息输入'))
-        print(self.text_middle(text='[4]： 获取项目源码'))
+        print(self.text_middle(text='[4]： 立即输入数据'))
+        print(self.text_middle(text='[5]： 获取项目源码'))
         print(self.split())
 
     def be_exiting(self):
@@ -128,7 +132,7 @@ class Config(object):
         print('')
 
         for item in range(3):
-            print(self.text_middle(text='距离输入还有 0' + str(3 - item) + ' 秒'), end='\r')
+            print('\r' + self.text_middle(text='距离输入还有 0' + str(3 - item) + ' 秒'), end='')
             time.sleep(1)
 
         os.system('cls')
