@@ -17,11 +17,13 @@ class ConsoleSettings(object):
         return window
 
     def get_old_handle(self):
-        handle = self.find_window(window_title='管理员: ' + ' ' + self.config.old_title)
+        old_title = '管理员: ' + ' ' + self.config.old_title
+        handle = self.find_window(window_title=old_title)
         return handle
 
     def get_new_handle(self):
-        handle = self.find_window(window_title=self.config.new_title)
+        new_title = self.config.new_title
+        handle = self.find_window(window_title=new_title)
         return handle
 
     @staticmethod

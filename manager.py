@@ -37,7 +37,7 @@ class Manager(object):
         self.config.choices_title()
 
     def manager(self):
-        print('')
+        self.config.text_middle()
 
         while True:
             self.title()

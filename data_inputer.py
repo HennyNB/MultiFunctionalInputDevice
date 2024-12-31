@@ -8,6 +8,5 @@ class DataInputer(object):
     config = config.Config()
 
     def data_inputer(self):
-        os.system('cls')
         os.system('start ' + self.config.data_path)
-        print('')
+        self.config.data_inputer_tips()

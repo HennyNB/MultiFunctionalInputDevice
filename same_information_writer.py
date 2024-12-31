@@ -13,12 +13,14 @@ class SameInformationWriter(object):
     config = config.Config()
     progress_bar = progress_bar.ProgressBar()
 
+    title = '重复信息轰炸器'
+
     def same_information_writer(self):
         os.system('cls')
-        self.config.function_title(flag='重复信息轰炸器')
+        self.config.function_title(flag=self.title)
 
         time.sleep(2)
-        self.config.waiting_to_writing()
+        self.config.waiting_to_writing(flag=self.title)
 
         with open(file=self.config.textdata_path, mode='r', encoding='UTF-8') as file:
             txt = file.read()
@@ -30,7 +32,7 @@ class SameInformationWriter(object):
 
         pyperclip.copy(txt)
         pyautogui.keyDown('Ctrl')
-        print('')
+        self.config.text_middle()
 
         for item in range(total_times):
             self.progress_bar.progress_bar(total=total_times, item=item)

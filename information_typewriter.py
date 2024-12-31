@@ -16,12 +16,14 @@ class InformationTypewriter(object):
 
     keyboard = pynput.keyboard.Controller()
 
+    title = '信息自动输入器'
+
     def information_typewriter(self):
         os.system('cls')
-        self.config.function_title(flag='信息自动输入器')
+        self.config.function_title(flag=self.title)
 
         time.sleep(2)
-        self.config.waiting_to_writing()
+        self.config.waiting_to_writing(flag=self.title)
 
         with open(file=self.config.textdata_path, mode='r', encoding='UTF-8') as file:
             content = file.read()
@@ -31,7 +33,7 @@ class InformationTypewriter(object):
 
         interval = float(quantity)
         total_times = len(content)
-        print('')
+        self.config.text_middle()
 
         for it in range(total_times):
             self.progress_bar.progress_bar(total=total_times, item=it)

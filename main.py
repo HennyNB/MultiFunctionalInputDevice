@@ -3,7 +3,7 @@ import sys
 sys.path.append('.\\')
 
 
-class MainProgramme(object):
+class MultiFunctionalInputDevice(object):
 
     @staticmethod
     def installer():
@@ -48,16 +48,16 @@ class MainProgramme(object):
         manager.manager()
 
 
-def main():
-    main_programme = MainProgramme()
+def multi_functional_input_device():
+    main = MultiFunctionalInputDevice()
 
-    main_programme.setting_configs()
-    main_programme.total_creator()
-    main_programme.installer()
-    main_programme.window_settings()
-    main_programme.information_writer()
-    main_programme.main()
+    main.setting_configs()
+    main.total_creator()
+    main.installer()
+    main.window_settings()
+    main.information_writer()
+    main.main()
 
 
 if __name__ == '__main__':
-    main()
+    multi_functional_input_device()
