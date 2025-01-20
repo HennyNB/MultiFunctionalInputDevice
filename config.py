@@ -88,7 +88,7 @@ class Config(object):
         self.text_middle(text=self.new_title)
         self.text_middle(text='作者：Henny-發龘')
         self.text_middle(text='QQ：2669753313')
-        self.text_middle(text='原创项目，盗版必究')
+        self.text_middle(text='版权所有，盗版必究')
         self.split()
 
     def function_title(self, flag: str):
